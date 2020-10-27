@@ -1,6 +1,24 @@
 from os import listdir, mkdir, rename, getcwd
 from os.path import splitext, exists, isdir
-from sys import executable
+from sys import argv
+
+def folder_organizer(path):
+	print(f'\nThe current working directory is {path}')
+	for file in listdir(path):
+		if argv[0] != f'{path}\\{file}' and __file__ != f'{path}\\{file}':
+			if isdir(f'{path}\\{file}') is False:
+				categorized_folder_name = folder(splitext(file)[1])
+				if exists(categorized_folder_name) is False:
+					try:
+						mkdir(f'{path}\\{categorized_folder_name}')
+					except OSError:
+						print(OSError)
+				try:
+					rename(f'{path}\\{file}', f'{path}\\{categorized_folder_name}\\{file}')
+					print(f'{file} has been moved in {categorized_folder_name}')
+				except OSError as error:
+					print(f'{error}')
+	print("This directory has been organized!")
 
 
 def folder(extension):
@@ -33,30 +51,15 @@ def folder(extension):
     }
     return extensions_dict.get(extension, 'Other files')
 
-
-def folder_organizer(path):
-    list_dir = listdir(path)
-    for file in list_dir:
-        if executable != f'{path}\\{file}' and __file__ != f'{path}\\{file}':
-            if isdir(f'{path}\\{file}') is False:
-                extension = splitext(file)[1]
-                if exists(folder(extension)) is False:
-                    try:
-                        mkdir(folder(extension))
-                    except OSError:
-                        print(OSError)
-                try:
-                    rename(f'{path}\\{file}', f'{path}\\{folder(extension)}\\{file}')
-                    print(file, 'has been moved in', folder(extension))
-                except OSError:
-                    print(f'ERROR: {file} already exists in {folder(extension)}')
-    print("This directory has been organized!")
-
-
 if __name__ == '__main__':
-    current_path = getcwd()
-    try:
-        print('\nThe current working directory is', current_path)
-        folder_organizer(current_path)
-    except Exception as error:
-        print(error)
+	try:
+		current_path = argv[1]
+	except IndexError:
+		current_path = getcwd()
+	if exists(current_path):
+		try:
+			folder_organizer(current_path)
+		except Exception as error:
+			print(error)
+	else:
+		print("The directory path you want to organize doesn't exists")
