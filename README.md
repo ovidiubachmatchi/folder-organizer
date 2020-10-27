@@ -3,5 +3,5 @@ Folder-Organizer is a simple but quite useful script that organizes and sorts al
 from a directory into subcategories folders. All the code is written in one python file.
 ***
 ### How to use it ?
-``` python folder-organizer.py <optional path> ```  
+``` python folder-organizer.py [path] ```  
 if no path is specified the current location of the python file is taken as the path to organize
