@@ -3,21 +3,21 @@ from os.path import splitext, exists, isdir
 from sys import argv
 
 def folder_organizer(path):
-	print(f'\nThe current working directory is {path}')
+	print(f"\nThe current working directory is '{path}'")
 	for file in listdir(path):
 		if argv[0] != f'{path}\\{file}' and __file__ != f'{path}\\{file}':
 			if isdir(f'{path}\\{file}') is False:
 				categorized_folder_name = folder(splitext(file)[1])
-				if exists(categorized_folder_name) is False:
+				if exists(f'{path}\\{categorized_folder_name}') is False:
 					try:
 						mkdir(f'{path}\\{categorized_folder_name}')
-					except OSError:
-						print(OSError)
+					except OSError as error:
+						print(error)
 				try:
 					rename(f'{path}\\{file}', f'{path}\\{categorized_folder_name}\\{file}')
-					print(f'{file} has been moved in {categorized_folder_name}')
+					print(f"'{file}' has been moved in '{categorized_folder_name}' folder")
 				except OSError as error:
-					print(f'{error}')
+					print(f"'{file}' already exists in '{categorized_folder_name}' folder, we will not overwrite")
 	print("This directory has been organized!")
 
 
