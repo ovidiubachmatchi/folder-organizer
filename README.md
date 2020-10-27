@@ -1,4 +1,3 @@
-# Folder-Organizer
 ### Description
 Folder-Organizer is a simple but quite useful script that organizes and sorts all files from a  
 directory into subcategories folders. It is python script and all the code is written in one file.
