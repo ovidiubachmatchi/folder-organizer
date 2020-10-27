@@ -5,4 +5,3 @@ directory into subcategories folders. It is python script and all the code is wr
 ### How to use it ?
 ``` python folder-organizer.py <optional path> ```  
 if no path is specified the current location of the python file is taken as the path to organize
-***
