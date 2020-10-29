@@ -3,7 +3,7 @@ Folder-Organizer is a simple but quite useful script that organizes and sorts al
 files from a directory into subcategories folders.  
 The project includes a simple GUI to select the directory you want to organize  
 The script is built efficiently so in no time the folder will be organized.  
-All the dependencies are included into the virtual environment.  
+All the dependencies are included into the requirements.txt file.  
 ***
 > ## How to use it ?
 1. Open command prompt in the project directory  
