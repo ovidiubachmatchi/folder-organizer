@@ -6,12 +6,12 @@ The script is built efficiently so in no time the folder will be organized.
 All the dependencies are included into the virtual environment.  
 ***
 > ## How to use it ?
-1. Open command prompt in the project directory 
-2. Activate the virtual environment, so you won't need to download anything extra  
-``` Scripts\activate.bat ```  
-3. Run the script using python  
+1. Open command prompt in the project directory  
+2.1. Make sure you have downloaded requirements.txt  
+``` pip install -r requirements.txt ```   
+2.2. Run the script using python  
 ``` python launch.py```  
-4. Select the directory path you want to organize  
-5. Click 'Organize'
+3. Select the directory path you want to organize  
+4. Click 'Organize'
 > ### Demo Usage on a 6GB folder
 ![demo](media/demo_usage.gif)
