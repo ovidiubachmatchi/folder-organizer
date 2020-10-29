@@ -7,7 +7,7 @@ All the dependencies are included into the requirements.txt file.
 ***
 > ## How to use it ?
 1. Open command prompt in the project directory  
-2.1. Make sure you have downloaded requirements.txt (PyQt5, PyQt5-sip)  
+2.1. Make sure you have downloaded all the dependencies (PyQt5, PyQt5-sip)  
 ``` pip install -r requirements.txt ```   
 2.2. Run the script using python  
 ``` python launch.py```  
